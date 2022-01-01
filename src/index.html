@@ -1,0 +1,23 @@
+<div ng-app="gameOfLifeApp" ng-controller="gameOfLifeCtrl"> 
+  
+  <h3 style="text-align: center">Game Of Life</h3>
+ 
+   <table>
+     <tr ng-repeat='row in rows'>
+      <td ng-click=activate(rows.indexOf(row),$index) 
+          ng-repeat='col in row.cols'
+          ng-class="{'new':col.active == 1, 'old':col.active >1 }">        
+     </tr>
+   </table>
+  
+   <div class="components">
+   <button ng-click="stopGame();">durdur</button>
+   <button ng-click="startGame(false);">başla</button>
+   <button ng-click="clear();">temizle</button>
+   Generation: {{generation}}
+  </div>
+   
+  
+  
+  
+</div>
